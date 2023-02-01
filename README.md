@@ -1,21 +1,6 @@
-# tree-sitter
+# tree-sitter-c2rust
+[![Crates.io](https://img.shields.io/crates/v/tree-sitter-c2rust)](https://crates.io/crates/tree-sitter-c2rust)
 
-[![CICD badge]][CICD]
-[![DOI](https://zenodo.org/badge/14164618.svg)](https://zenodo.org/badge/latestdoi/14164618)
+This is a fork of [Tree Sitter](https://github.com/tree-sitter/tree-sitter), but with the runtime component automatically converted to Rust using [c2rust](https://c2rust.com). This enables use of Tree Sitter parsers without libc, useful for targets like `wasm32-unknown-unknown`.
 
-[CICD badge]: https://github.com/tree-sitter/tree-sitter/actions/workflows/CICD.yml/badge.svg
-[CICD]: https://github.com/tree-sitter/tree-sitter/actions/workflows/CICD.yml
-
-Tree-sitter is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited. Tree-sitter aims to be:
-
-- **General** enough to parse any programming language
-- **Fast** enough to parse on every keystroke in a text editor
-- **Robust** enough to provide useful results even in the presence of syntax errors
-- **Dependency-free** so that the runtime library (which is written in pure C) can be embedded in any application
-
-## Links
-
-- [Documentation](https://tree-sitter.github.io)
-- [Rust binding](lib/binding_rust/README.md)
-- [WASM binding](lib/binding_web/README.md)
-- [Command-line interface](cli/README.md)
+Because the conversion is automatic, the resulting code is not idiomatic Rust. But we preserve 1:1 correspondence with the original C code, so that future changes to Tree Sitter can be easily merged into this fork. Furthermore, the Rust bindings are still supported, so this can be used as a drop-in replacement for the regular Tree Sitter crate.

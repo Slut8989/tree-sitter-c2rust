@@ -41,7 +41,7 @@ while getopts "adDghl:e:s:i:" option; do
       exit
       ;;
     a)
-      export RUSTFLAGS="-Z sanitizer=address"
+      export RUSTFLAGS="-Z sanitizer=address -C opt-level=1"
       # Specify a `--target` explicitly. For some reason, this is required for
       # address sanitizer support.
       toolchain=$(rustup show active-toolchain)

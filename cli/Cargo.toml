@@ -11,6 +11,9 @@ categories = ["command-line-utilities", "parsing"]
 repository = "https://github.com/tree-sitter/tree-sitter"
 rust-version.workspace = true
 
+[features]
+capi = ["tree-sitter/capi"]
+
 [[bin]]
 name = "tree-sitter"
 path = "src/main.rs"
@@ -44,6 +47,7 @@ webbrowser = "0.8.10"
 which = "4.4.0"
 
 [dependencies.tree-sitter]
+package = "tree-sitter-c2rust"
 version = "0.20.10"
 path = "../lib"
 

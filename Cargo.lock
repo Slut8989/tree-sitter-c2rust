@@ -68,6 +68,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "89b2fd2a0dcf38d7971e2194b6b6eebab45ae01067456a7fd93d5547a61b70be"
 
 [[package]]
+name = "c2rust-bitfields"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eb34f0c0ace43530b2df7f18bc69ee0c4082158aa451ece29602f8c841e73764"
+dependencies = [
+ "c2rust-bitfields-derive",
+]
+
+[[package]]
+name = "c2rust-bitfields-derive"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3dd1601a7b828ab874d890e5a895563ca8ad485bdd3d2a359f148c8b72537241"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
+]
+
+[[package]]
 name = "cc"
 version = "1.0.82"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -501,6 +521,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "process_c2rust"
+version = "0.0.0"
+dependencies = [
+ "syn 1.0.109",
+]
+
+[[package]]
 name = "quote"
 version = "1.0.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -828,10 +855,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "tree-sitter"
+name = "tree-sitter-c2rust"
 version = "0.20.10"
 dependencies = [
- "cc",
+ "c2rust-bitfields",
+ "errno",
+ "libc",
+ "once_cell",
  "regex",
 ]
 
@@ -866,7 +896,7 @@ dependencies = [
  "tempfile",
  "tiny_http",
  "toml",
- "tree-sitter",
+ "tree-sitter-c2rust",
  "tree-sitter-config",
  "tree-sitter-highlight",
  "tree-sitter-loader",
@@ -895,7 +925,7 @@ dependencies = [
  "lazy_static",
  "regex",
  "thiserror",
- "tree-sitter",
+ "tree-sitter-c2rust",
 ]
 
 [[package]]
@@ -910,7 +940,7 @@ dependencies = [
  "regex",
  "serde",
  "serde_json",
- "tree-sitter",
+ "tree-sitter-c2rust",
  "tree-sitter-highlight",
  "tree-sitter-tags",
 ]
@@ -922,7 +952,7 @@ dependencies = [
  "memchr",
  "regex",
  "thiserror",
- "tree-sitter",
+ "tree-sitter-c2rust",
 ]
 
 [[package]]

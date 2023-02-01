@@ -1,0 +1,123 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/parser.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/parser.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/lexer.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/lexer.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/subtree.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/subtree.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/node.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/node.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/lib.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/lib.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/tree_cursor.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/tree_cursor.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/get_changed_ranges.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/get_changed_ranges.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/language.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/language.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/tree.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/tree.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/query.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/query.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c", "-I/nix/store/l1a7p8yp0nlvghq5vifz4qr6s11frxl5-glibc-2.35-224-dev/include", "-I/nix/store/y39v6zn19sazv22241by5chfpicfdb2d-clang-11.1.0-lib/lib/clang/11.1.0/include",
+            "-Ilib/include",
+            "-Ilib/src/",
+            "lib/src/stack.c"
+        ],
+        "directory": "/home/shadaj/research/tree-sitter-c2rust",
+        "file": "lib/src/stack.c"
+    }
+]

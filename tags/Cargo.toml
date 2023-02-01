@@ -23,5 +23,6 @@ memchr = "2.5.0"
 thiserror = "1.0.43"
 
 [dependencies.tree-sitter]
+package = "tree-sitter-c2rust"
 version = "0.20"
 path = "../lib"

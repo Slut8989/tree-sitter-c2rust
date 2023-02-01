@@ -83,6 +83,7 @@ fn test_parsing_with_logging() {
 }
 
 #[test]
+#[cfg(feature = "capi")]
 #[cfg(unix)]
 fn test_parsing_with_debug_graph_enabled() {
     use std::io::{BufRead, BufReader, Seek};
@@ -661,11 +662,22 @@ fn test_parsing_with_a_timeout() {
         None,
     );
     assert!(tree.is_none());
+    let elapsed = start_time.elapsed();
     #[cfg(not(target_arch = "sparc64"))]
-    assert!(start_time.elapsed().as_micros() < 2000);
+    if elapsed.as_micros() >= 2000 {
+        panic!(
+            "Time to return exceeded expectations: {} >= 2000",
+            elapsed.as_micros()
+        );
+    }
 
     #[cfg(target_arch = "sparc64")]
-    assert!(start_time.elapsed().as_micros() < 8000);
+    if elapsed.as_micros() >= 8000 {
+        panic!(
+            "Time to return exceeded expectations: {} >= 8000",
+            elapsed.as_micros()
+        );
+    }
 
     // Continue parsing, but pause after 1 ms of processing.
     parser.set_timeout_micros(5000);

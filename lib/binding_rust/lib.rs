@@ -1,3 +1,6 @@
+mod core_wrapper;
+pub use core_wrapper::core;
+
 pub mod ffi;
 mod util;
 
@@ -800,7 +803,7 @@ impl Tree {
             let ptr = ffi::ts_tree_included_ranges(self.0.as_ptr(), &mut count as *mut u32);
             let ranges = slice::from_raw_parts(ptr, count as usize);
             let result = ranges.iter().copied().map(|range| range.into()).collect();
-            (FREE_FN)(ptr as *mut c_void);
+            ffi::ts_free(ptr as *mut c_void);
             result
         }
     }
@@ -1235,7 +1238,7 @@ impl<'tree> Node<'tree> {
             .to_str()
             .unwrap()
             .to_string();
-        unsafe { (FREE_FN)(c_string as *mut c_void) };
+        unsafe { ffi::ts_free(c_string as *mut c_void) };
         result
     }
 
@@ -2584,12 +2587,6 @@ impl fmt::Display for QueryError {
     }
 }
 
-extern "C" {
-    fn free(ptr: *mut c_void);
-}
-
-static mut FREE_FN: unsafe extern "C" fn(ptr: *mut c_void) = free;
-
 #[doc(alias = "ts_set_allocator")]
 pub unsafe fn set_allocator(
     new_malloc: Option<unsafe extern "C" fn(usize) -> *mut c_void>,
@@ -2597,7 +2594,6 @@ pub unsafe fn set_allocator(
     new_realloc: Option<unsafe extern "C" fn(*mut c_void, usize) -> *mut c_void>,
     new_free: Option<unsafe extern "C" fn(*mut c_void)>,
 ) {
-    FREE_FN = new_free.unwrap_or(free);
     ffi::ts_set_allocator(new_malloc, new_calloc, new_realloc, new_free);
 }
 

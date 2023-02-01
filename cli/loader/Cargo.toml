@@ -27,6 +27,7 @@ features = ["preserve_order"]
 [dependencies.tree-sitter]
 version = "0.20"
 path = "../../lib"
+package = 'tree-sitter-c2rust'
 
 [dependencies.tree-sitter-highlight]
 version = "0.20"
